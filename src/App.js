@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import {
   changeFathername,
   changeFirstname,
@@ -57,19 +56,18 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
-    lastname: state.lastname,
-    firstname: state.firstname,
-    fathername: state.fathername,
+    lastname: state.lastname.lastname,
+    firstname: state.firstname.firstname,
+    fathername: state.fathername.fathername,
   };
 };
 
-const putActionProps = (dispatch) => {
-  return {
-    changeLastname: bindActionCreators(changeLastname, dispatch),
-    changeFirstname: bindActionCreators(changeFirstname, dispatch),
-    changeFathername: bindActionCreators(changeFathername, dispatch),
-  };
+const putActionProps = {
+  changeLastname,
+  changeFirstname,
+  changeFathername,
 };
 
 export default connect(mapStateToProps, putActionProps)(App);

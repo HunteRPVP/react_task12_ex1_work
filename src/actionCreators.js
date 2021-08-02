@@ -2,7 +2,7 @@ import {
   ACTION_CHANGE_LASTNAME,
   ACTION_CHANGE_FIRSTNAME,
   ACTION_CHANGE_FATHERNAME,
-} from "./myStore";
+} from "./consts";
 
 export const changeLastname = (lastname) => ({
   type: ACTION_CHANGE_LASTNAME,
